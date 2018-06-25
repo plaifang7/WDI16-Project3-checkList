@@ -74,13 +74,27 @@ const urgentList = new ListModel ({
     items: [urgentItem] 
 })
 
+// User Models
+const george = new UserModel ({
+    userName: 'gg2000',
+    email: 'gg2000@dinkydonuts.com',
+    firstName: 'George',
+    lastName: 'Grayson',
+    shoppingList: [bdayList]
+})
 
+const conzuela = new UserModel ({
+    userName: 'conzdoll',
+    email: 'conzdoll22@trello.com',
+    firstName: 'Conzuela',
+    lastName: 'Gonzalez',
+    shoppingList: [weeklyList, urgentList]
+})
 
 
 
 UserModel.remove({})
-.then(() => .save()
-.then(() => .save()
-.then(() => .save()
+.then(() => george.save())
+.then(() => conzuela.save())
 .then(() => console.log('Successful Save'))
 .then(() => mongoose.connection.close())
