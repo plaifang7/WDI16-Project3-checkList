@@ -74,9 +74,13 @@ const urgentList = new ListModel ({
     items: [urgentItem] 
 })
 
+
+
+
+
 UserModel.remove({})
-.then(() => bdayList.save()
-.then(() => weeklyList.save()
-.then(() => urgentList.save()
+.then(() => .save()
+.then(() => .save()
+.then(() => .save()
 .then(() => console.log('Successful Save'))
 .then(() => mongoose.connection.close())
