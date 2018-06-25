@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const ItemSchema = new Schema ({
+const ItemSchema = new Schema({
     itemName: {
         type: 'String',
-        required: true, 
+        required: true,
     },
     img: {
         type: 'String'
@@ -12,20 +12,21 @@ const ItemSchema = new Schema ({
     checkedItem: false
 })
 
-const ShopppingListSchema = new Schema ({
+const ShopppingListSchema = new Schema({
     storeName: {
         type: 'String'
     },
     listDate: {
-        type: 'Date'
+        type: Date
     },
     listName: {
-        type: 'String'
+        type: 'String',
+        required: true
     },
     items: [ItemSchema]
 })
 
-const UserSchema = new Schema ({
+const UserSchema = new Schema({
     userName: {
         type: 'String',
         required: true
