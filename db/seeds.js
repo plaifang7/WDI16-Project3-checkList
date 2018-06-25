@@ -68,5 +68,15 @@ const weeklyList = new ListModel ({
 })
 
 const urgentList = new ListModel ({
-    
+    storeName: 'Kroger',
+    listDate: 'July 1, 2018',
+    listName: 'Urgent Shopping',
+    items: [urgentItem] 
 })
+
+UserModel.remove({})
+.then(() => bdayList.save()
+.then(() => weeklyList.save()
+.then(() => urgentList.save()
+.then(() => console.log('Successful Save'))
+.then(() => mongoose.connection.close())
