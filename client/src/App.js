@@ -13,6 +13,9 @@ class App extends Component {
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
           </div>
+          <div>
+            <button><Link to="/login"/></button>
+          </div>
           <Switch>
             <Route exact path="/" component={HomePage}/>
             <Route exact path="/about" component={About}/>

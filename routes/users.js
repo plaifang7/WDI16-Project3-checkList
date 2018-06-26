@@ -10,6 +10,13 @@ router.get('/', function (req, res, next) {
     })
 });
 
+router.get('/:id', (req, res) => {
+  UserModel.findById(req.params.id)
+    .then((user) => {
+      res.send({user})
+    })
+})
+
 
 
 module.exports = router;
