@@ -38,8 +38,6 @@ router.delete('/:id', (req,res) => {
   .then((user) => {
    res.send('You deleted your profile!!')
   })
-  
-
 })
 
 

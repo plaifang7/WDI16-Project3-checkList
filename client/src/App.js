@@ -36,13 +36,13 @@ class App extends Component {
             <Link to="/users">Users</Link>
           </div>
           <div>
-            <button><Link to="/login">Log In</Link></button>
+            <button><Link to="/users/login">Log In</Link></button>
           </div>
           <Switch>
             <Route exact path="/" component={HomePage}/>
             <Route exact path="/about" component={About}/>
             <Route exact path="/users" render={UserWrap}/>
-            <Route path="/login" render={UserWrap}/>
+            <Route path="/users/login" render={LogInWrap}/>
             
           </Switch>
         </div>
