@@ -64,7 +64,7 @@ const weeklyList = new ListModel ({
     storeName: 'Kroger',
     listDate: 'June 31, 2018',
     listName: 'Weekly Shopping',
-    items: [weeklyItem, weeklyItem2, weeklyItem3, weeklyItem4 ]
+    items: [weeklyItem, weeklyItem2, weeklyItem3]
 })
 
 const urgentList = new ListModel ({
