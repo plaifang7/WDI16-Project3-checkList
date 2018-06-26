@@ -12,9 +12,10 @@ class App extends Component {
           <div>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
+            <Link to="/users">Users</Link>
           </div>
           <div>
-            <button><Link to="/login"/></button>
+            <button><Link to="/login">Log In</Link></button>
           </div>
           <Switch>
             <Route exact path="/" component={HomePage}/>
