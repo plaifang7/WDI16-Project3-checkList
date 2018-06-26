@@ -18,7 +18,7 @@ connection.on('error', (err) => {
 
 
 let usersRouter = require('./routes/users');
-let indexRouter = require('./routes/index')
+
 
 let app = express();
 
@@ -32,7 +32,7 @@ app.get('/', (req,res) => {
   })
 
   app.use('/users', usersRouter);
-  app.use('/', indexRouter);
+  
   
 
 module.exports = app;

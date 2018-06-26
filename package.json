@@ -11,7 +11,6 @@
   "engines": {
     "node": "8.6.0"
   },
-
   "dependencies": {
     "concurrently": "^3.6.0",
     "cookie-parser": "~1.4.3",
@@ -20,6 +19,7 @@
     "express": "~4.16.0",
     "mongoose": "^5.1.6",
     "morgan": "~1.9.0",
-    "npm": "^6.1.0"
+    "npm": "^6.1.0",
+    "styled-components": "^3.3.3"
   }
 }
