@@ -43,6 +43,7 @@ const UserSchema = new Schema({
         type: 'String',
         required: true
     },
+    img: 'String',
     shoppingList: [ShopppingListSchema]
 })
 

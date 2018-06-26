@@ -3,9 +3,30 @@ import { Link, Switch, BrowserRouter as  Router, Route } from 'react-router-dom'
 import './App.css';
 import HomePage from './components/HomePage'
 import About from './components/About'
+import UserPage from './components/UserPage'
+import LoginPage from './components/LoginPage'
+import axios from 'axios'
 
 class App extends Component {
+  state ={
+    users: []
+  }
+
+  componentDidMount () {
+    axios.get('/api/users')
+    .then((res) => {
+      this.setState({user: res.data.users})
+    })
+  }
   render() {
+
+    const LogInWrap =   (props) => {
+      <LoginPage users={this.state.users} {...props}/>
+    }
+
+    const UserWrap = () => {
+      <UserPage users={this.state.users}/>
+    }
     return (
       <Router>
         <div className="App">
@@ -20,6 +41,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage}/>
             <Route exact path="/about" component={About}/>
+            <Route exact path="/users" render={UserWrap}/>
+            <Route path="/login" render={UserWrap}/>
             
           </Switch>
         </div>

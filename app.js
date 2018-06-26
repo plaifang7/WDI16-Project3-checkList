@@ -31,7 +31,7 @@ app.get('/', (req,res) => {
     res.sendFile(__dirname + '/client/build/index.html')
   })
 
-  app.use('/users', usersRouter);
+  app.use('/api/users', usersRouter);
   
   
 

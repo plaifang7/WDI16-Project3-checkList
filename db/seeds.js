@@ -80,14 +80,16 @@ const george = new UserModel ({
     email: 'gg2000@dinkydonuts.com',
     firstName: 'George',
     lastName: 'Grayson',
+    img: 'https://www.fillmurray.com/220/330',
     shoppingList: [bdayList]
 })
 
-const conzuela = new UserModel ({
+const consuela = new UserModel ({
     userName: 'conzdoll',
     email: 'conzdoll22@trello.com',
-    firstName: 'Conzuela',
+    firstName: 'Consuela',
     lastName: 'Gonzalez',
+    img: 'http://25.media.tumblr.com/0b779e5c747235704a00df91f833a1f3/tumblr_mofm70hvOD1rdu135o1_500.gif',
     shoppingList: [weeklyList, urgentList]
 })
 
@@ -95,6 +97,6 @@ const conzuela = new UserModel ({
 
 UserModel.remove({})
 .then(() => george.save())
-.then(() => conzuela.save())
+.then(() => consuela.save())
 .then(() => console.log('Successful Save'))
 .then(() => mongoose.connection.close())
