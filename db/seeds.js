@@ -77,6 +77,7 @@ const urgentList = new ListModel ({
 // User Models
 const george = new UserModel ({
     userName: 'gg2000',
+    password: 'globalgeorge',
     email: 'gg2000@dinkydonuts.com',
     firstName: 'George',
     lastName: 'Grayson',
@@ -86,6 +87,7 @@ const george = new UserModel ({
 
 const consuela = new UserModel ({
     userName: 'conzdoll',
+    password: 'ilovemifamilia',
     email: 'conzdoll22@trello.com',
     firstName: 'Consuela',
     lastName: 'Gonzalez',

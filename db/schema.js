@@ -35,6 +35,10 @@ const UserSchema = new Schema({
         type: 'String',
         required: true
     },
+    password: {
+        required: true,
+        type: 'string'
+    },
     firstName: {
         type: 'String',
         required: true
