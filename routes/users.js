@@ -10,6 +10,7 @@ router.get('/', function (req, res, next) {
     })
 });
 
+// find user by ID and show
 router.get('/:id', (req, res) => {
   UserModel.findById(req.params.id)
     .then((user) => {
@@ -17,6 +18,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
+// create new user
 router.post('/', (req, res) => {
   const newUser = UserModel(req.body)
   newUser.save()
@@ -26,6 +28,7 @@ router.post('/', (req, res) => {
 
 })
 
+//update user
 router.patch('/:id', (req, res) => {
   UserModel.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then((user) => {
@@ -33,6 +36,7 @@ router.patch('/:id', (req, res) => {
     })
 })
 
+// delete user
 router.delete('/:id', (req,res) => {
   UserModel.findByIdAndRemove(req.params.id)
   .then((user) => {
