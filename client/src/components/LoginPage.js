@@ -16,9 +16,11 @@ class LoginPage extends Component {
                    type="text"
                    name="userName"
                    value={this.state.userName}
-                   
+
                    />
-                   <input/>
+                   <input
+                   placeholder=
+                   />
                </form>
             </div>
         );
