@@ -18,7 +18,7 @@ connection.on('error', (err) => {
 
 
 let usersRouter = require('./routes/users');
-let listRouter = require('./routes/list')
+let listRouter = require('./routes/list');
 
 
 
