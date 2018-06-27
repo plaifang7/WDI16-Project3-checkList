@@ -24,8 +24,8 @@ class App extends Component {
       <LoginPage {...props} users={this.state.users} />
     }
 
-    const UserWrap = () => {
-      <UserPage users={this.state.users} />
+    const UserWrap = (props) => {
+      <UserPage users={this.state.users} {...props} />
     }
 
     return (
@@ -41,8 +41,8 @@ class App extends Component {
           </div>
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route exact path="/users" render={UserWrap} />
-            <Route exact path="/login" render={LogInWrap} />
+            <Route exact path="/users" render={this.UserWrap} />
+            <Route exact path="/login" render={this.LogInWrap} />
             <Route exact path="/about" component={About} />
 
 
