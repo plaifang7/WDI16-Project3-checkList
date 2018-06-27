@@ -4,22 +4,11 @@ import axios from 'axios'
 
 class UserPage extends Component {
     state = {
-        user: {
-            shoppingList: []
+        user: {},
+        shoppingList: []
         }
-    }
-    componentDidMount() {
-        const userId = this.props.match.params.userId
-        axios.get(`/api/users/${userId}`)
-            .then((res) => {
-                this.setState({
-                    user: res.data.user,
-                    shoppingList: res.data.shoppingList
-                })
-
-            })
-
-    }
+    
+  
 
     render() {
 

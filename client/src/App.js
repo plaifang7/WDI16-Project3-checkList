@@ -6,6 +6,7 @@ import About from './components/About'
 import UserPage from './components/UserPage'
 import LoginPage from './components/LoginPage'
 import axios from 'axios'
+import UserShow from './components/UserShow';
 
 class App extends Component {
   state = {
@@ -15,7 +16,7 @@ class App extends Component {
   componentDidMount() {
     axios.get('/api/users')
       .then((res) => {
-        this.setState({ users: res.data.users })
+        this.setState({ users: res.data })
       })
   }
   render() {
@@ -48,6 +49,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/users" render={UserWrap} />
+            <Route exact path="/users/:userId" component={UserShow} />
             <Route exact path="/login" render={LogInWrap} />
             <Route exact path="/about" component={About} />
 
