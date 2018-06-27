@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import './App.css';
 import HomePage from './components/HomePage'
 import About from './components/About'
@@ -21,11 +21,17 @@ class App extends Component {
   render() {
 
     const LogInWrap = (props) => {
-      <LoginPage {...props} users={this.state.users} />
+      return (
+
+        <LoginPage {...props} users={this.state.users} />
+
+      )
     }
 
     const UserWrap = (props) => {
-      <UserPage users={this.state.users} {...props} />
+      return (
+        <UserPage users={this.state.users} {...props} />
+      )
     }
 
     return (
@@ -41,8 +47,8 @@ class App extends Component {
           </div>
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route exact path="/users" render={this.UserWrap} />
-            <Route exact path="/login" render={this.LogInWrap} />
+            <Route exact path="/users" render={UserWrap} />
+            <Route exact path="/login" render={LogInWrap} />
             <Route exact path="/about" component={About} />
 
 

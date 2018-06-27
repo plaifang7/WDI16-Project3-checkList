@@ -13,11 +13,13 @@ class UserPage extends Component {
 
         return (
             <div>
-                <h1>Select a User</h1>
-
+                
                 {this.props.users.map((user) => {
                     return (
+                        <div>
+                            <img src={user.img} alt={user.userName}/>
                             <Link key={user._id} to={`/user/${user._id}`}>{user.userName}</Link>
+                            </div>
                     )
                 })}
             </div>
