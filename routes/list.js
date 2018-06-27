@@ -25,7 +25,14 @@ router.post('/', (req, res) => {
     .then((savedList) => {
         res.send({user: savedList})
     })
+})
 
+//Delete Route
+router.delete('/:id', (req,res) => {
+    ListModel.findByIdAndRemove(req.params.id)
+        .then(() => {
+            res.send('Deleted that list! Ayee')
+        })
 })
 
 module.exports = router
