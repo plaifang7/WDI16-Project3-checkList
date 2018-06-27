@@ -3,23 +3,26 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 class UserPage extends Component {
-    state = {
-        user: {},
-        shoppingList: []
-        }
-    
-  
+state = {
+    users: []
+}
 
+componentDidMount() {
+    axios.get('/api/users')
+    .then((res) => {
+        this.setState({users: res.data.users})
+    })
+}
     render() {
 
         return (
             <div>
 
-                {this.props.users.map((user) => {
+                {this.state.users.map((user, index) => {
                     return (
                         <div>
-                            <div>
-                                <img src={user.img} alt={user.userName} />
+                            <div key={index}>
+                                <img  src={user.img} alt={user.userName} />
                             </div>
                             <Link key={user._id} to={`/user/${user._id}`}>{user.userName}</Link>
                         </div>

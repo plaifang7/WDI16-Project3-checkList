@@ -23,15 +23,14 @@ class LoginPage extends Component {
         event.preventDefault()
         axios.post('/api/users')
         .then((res) => {
-            
-        this.setState({})            
+        this.props.history.push(`/users/${res.data._id}`)          
         })
     }
     render() {
         return (
             <div>
                 <h1>Create A User</h1>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <input
                         placeholder="First Name"
                         type="text"
@@ -71,6 +70,7 @@ class LoginPage extends Component {
                         value={this.state.password}
                         onChange={this.handleChange}
                     />
+                    <br/>
                     <button type="submit">Submit</button>
                 </form>
             </div>
