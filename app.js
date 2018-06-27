@@ -19,7 +19,7 @@ connection.on('error', (err) => {
 
 let usersRouter = require('./routes/users');
 let listRouter = require('./routes/list');
-
+let itemRouter = require('./routes/items');
 
 
 let app = express();
@@ -35,6 +35,7 @@ app.get('/', (req,res) => {
 
   app.use('/api/users', usersRouter);
   app.use('/api/users/:userId/list', listRouter)
+  app.use('/api/users/:userId/list/:listId/items', itemRouter)
   
   
 
