@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Switch, BrowserRouter as  Router, Route } from 'react-router-dom'
+import { Link, Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 import HomePage from './components/HomePage'
 import About from './components/About'
@@ -8,25 +8,26 @@ import LoginPage from './components/LoginPage'
 import axios from 'axios'
 
 class App extends Component {
-  state ={
+  state = {
     users: []
   }
 
-  componentDidMount () {
+  componentDidMount() {
     axios.get('/api/users')
-    .then((res) => {
-      this.setState({user: res.data.users})
-    })
+      .then((res) => {
+        this.setState({ user: res.data.users })
+      })
   }
   render() {
 
-    const LogInWrap =   (props) => {
-      <LoginPage users={this.state.users} {...props}/>
+    const LogInWrap = (props) => {
+      <LoginPage {...props} users={this.state.users} />
     }
 
     const UserWrap = () => {
-      <UserPage users={this.state.users}/>
+      <UserPage users={this.state.users} />
     }
+
     return (
       <Router>
         <div className="App">
@@ -36,14 +37,15 @@ class App extends Component {
             <Link to="/users">Users</Link>
           </div>
           <div>
-            <button><Link to="/users/login">Log In</Link></button>
+            <button><Link to="/login">Log In</Link></button>
           </div>
           <Switch>
-            <Route exact path="/" component={HomePage}/>
-            <Route exact path="/about" component={About}/>
-            <Route exact path="/users" render={UserWrap}/>
-            <Route path="/users/login" render={LogInWrap}/>
-            
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/users" render={UserWrap} />
+            <Route path="/login" render={LogInWrap} />
+            <Route exact path="/about" component={About} />
+
+
           </Switch>
         </div>
       </Router>
