@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Switch, BrowserRouter as Router, Route } from 'react-router-dom'
+import {  BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import './App.css';
 import HomePage from './components/HomePage'
 import About from './components/About'
@@ -42,7 +42,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/users" render={UserWrap} />
-            <Route path="/login" render={LogInWrap} />
+            <Route exact path="/login" render={LogInWrap} />
             <Route exact path="/about" component={About} />
 
 

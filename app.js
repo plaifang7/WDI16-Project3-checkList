@@ -18,6 +18,8 @@ connection.on('error', (err) => {
 
 
 let usersRouter = require('./routes/users');
+let listRouter = require('./routes/list')
+
 
 
 let app = express();
@@ -32,6 +34,7 @@ app.get('/', (req,res) => {
   })
 
   app.use('/api/users', usersRouter);
+  app.use('/api/users/:userId/list', listRouter)
   
   
 
