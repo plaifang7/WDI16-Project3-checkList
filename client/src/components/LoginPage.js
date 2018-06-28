@@ -7,7 +7,8 @@ class LoginPage extends Component {
         password: '',
         firstName: '',
         lastName: '',
-        email: ''
+        email: '',
+        img: ''
     }
 
     handleChange = (event) => {
@@ -21,7 +22,7 @@ class LoginPage extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/users')
+        axios.post('/api/users', this.state)
         .then((res) => {
         this.props.history.push(`/users/${res.data._id}`)          
         })
@@ -68,6 +69,14 @@ class LoginPage extends Component {
                         type="text"
                         name="password"
                         value={this.state.password}
+                        onChange={this.handleChange}
+                    />
+                    <br/>
+                    <input
+                        placeholder="Image"
+                        type="text"
+                        name="img"
+                        value={this.state.img}
                         onChange={this.handleChange}
                     />
                     <br/>

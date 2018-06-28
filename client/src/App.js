@@ -16,18 +16,11 @@ class App extends Component {
   componentDidMount() {
     axios.get('/api/users')
       .then((res) => {
-        this.setState({ users: res.data })
+        this.setState({ users: res.data.users })
       })
   }
   render() {
 
-    const LogInWrap = (props) => {
-      return (
-
-        <LoginPage {...props} users={this.state.users} />
-
-      )
-    }
 
     const UserWrap = (props) => {
       return (
@@ -35,9 +28,10 @@ class App extends Component {
       )
     }
 
-    const UserShowWrap = (props) => (
+    const UserShowWrap = (props) => {
+      return (
       <UserShow users={this.state.users} {...props} />
-    )
+    )}
 
     return (
       <Router>
@@ -54,7 +48,7 @@ class App extends Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/users" render={UserWrap} />
             <Route exact path="/users/:id" render={UserShowWrap} />
-            <Route exact path="/login" render={LogInWrap} />
+            <Route exact path="/login" component={LoginPage} />
             <Route exact path="/about" component={About} />
 
 
