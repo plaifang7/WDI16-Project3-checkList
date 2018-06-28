@@ -7,7 +7,7 @@ class HomePage extends Component {
             <div>
                 <h1>Welcome to checkList</h1>
 
-                <button><Link to="/users">Enter</Link></button>
+                <Link to="/users"><button>Enter</button></Link>
                 
             </div>
         );

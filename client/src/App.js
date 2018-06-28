@@ -33,16 +33,16 @@ class App extends Component {
             <Link to="/users">Users</Link>
           </div>
           <div>
-            <button><Link to="/login">Log In</Link></button>
+          <Link to="/login"><button>Log In</button></Link>
           </div>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/users" component={UserPage} />
             <Route path="/users/:userId" component={UserShow} />
+            <Route exact path="/users/:userId/edit" component={UserShow} />`
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/about" component={About} />
-
-
+           
           </Switch>
         </div>
       </Router>
