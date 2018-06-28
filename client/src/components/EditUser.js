@@ -29,6 +29,7 @@ handleSubmit = (event) => {
     render() {
         return (
             <div>
+              <h1>Edit Your Profile</h1>
                 <form onSubmit={this.handleSubmit}>
                 <input
                         placeholder="E-mail"

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import {Link} from 'react-router-dom'
-import ShoppingList from './ShoppingList';
+import { Link } from 'react-router-dom'
+
 
 class UserShow extends Component {
   state = {
@@ -36,7 +36,7 @@ class UserShow extends Component {
       })
   }
 
-  
+
 
 
 

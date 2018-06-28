@@ -23,7 +23,7 @@ class App extends Component {
   render() {
 
 
-  
+
 
     return (
       <Router>
@@ -34,7 +34,7 @@ class App extends Component {
             <Link to="/users">Users</Link>
           </div>
           <div>
-          <Link to="/login"><button>Log In</button></Link>
+            <Link to="/login"><button>Log In</button></Link>
           </div>
           <Switch>
             <Route exact path="/" component={HomePage} />
@@ -43,7 +43,7 @@ class App extends Component {
             <Route exact path="/users/:userId/edit" component={EditUser} />`
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/about" component={About} />
-           
+
           </Switch>
         </div>
       </Router>
