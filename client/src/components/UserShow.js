@@ -4,9 +4,9 @@ import ShoppingList from './ShoppingList';
 
 class UserShow extends Component {
     state = {
-        users: {
+        users: {},
             shoppingList: []
-        }
+        
     }
 
     showUser = () => {
@@ -14,6 +14,7 @@ class UserShow extends Component {
         
         axios.get(`/api/users/${userId}`)
             .then(res => {
+                console.log(res)
                 this.setState({
                     users: res.data.users
                 })
