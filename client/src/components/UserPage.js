@@ -18,13 +18,13 @@ componentDidMount() {
         return (
             <div>
 
-                {this.state.users.map((user, index) => {
+                {this.state.users.map((user) => {
                     return (
-                        <div>
-                            <div key={index}>
+                        <div key={user._id}>
+                            <div>
                                 <img  src={user.img} alt={user.userName} />
                             </div>
-                            <Link key={user._id} to={`/user/${user._id}`}>{user.userName}</Link>
+                            <Link  to={`/user/${user._id}`}>{user.userName}</Link>
                         </div>
                     )
                 })}

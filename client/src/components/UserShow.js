@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import ShoppingList from './ShoppingList';
 
 class UserShow extends Component {
 state = {
-    users: [],
-    shoppingList: []
+    users: {
+        shoppingList: []
+    }
+    
+    
 }
 
     componentDidMount() {
         const userId = this.props.match.params.id
         axios.get(`/api/users/${userId}`)
             .then((res) => {
+                console.log(res)
                 this.setState({
-                    users: res.data.users,
-                    shoppingList: res.data.users.shoppingList
+                    users: res.data.users
                 })
-
             })
-
     }
+
     render() {
         return (
             <div>
-               <h1>Hello</h1> 
+                hello
+               <h1>{this.state.users.userName}</h1> 
+               <ShoppingList lists={this.state.users.shoppingList} />
             </div>
         );
     }

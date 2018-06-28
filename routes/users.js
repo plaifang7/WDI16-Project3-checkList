@@ -13,8 +13,8 @@ router.get('/', function (req, res, next) {
 // find user by ID and show
 router.get('/:id', (req, res) => {
   UserModel.findById(req.params.id)
-    .then((user) => {
-      res.send({ user })
+    .then((users) => {
+      res.send({ users })
     })
 })
 
