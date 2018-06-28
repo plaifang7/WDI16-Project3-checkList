@@ -7,6 +7,7 @@ import UserPage from './components/UserPage'
 import LoginPage from './components/LoginPage'
 import axios from 'axios'
 import UserShow from './components/UserShow';
+import EditUser from './components/EditUser';
 
 class App extends Component {
   state = {
@@ -38,8 +39,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/users" component={UserPage} />
-            <Route path="/users/:userId" component={UserShow} />
-            <Route exact path="/users/:userId/edit" component={UserShow} />`
+            <Route exact path="/users/:userId" component={UserShow} />
+            <Route exact path="/users/:userId/edit" component={EditUser} />`
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/about" component={About} />
            

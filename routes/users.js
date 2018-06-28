@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
 })
 
 //update user
-router.patch('/:id', (req, res) => {
+router.patch('/:id/edit', (req, res) => {
   UserModel.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then((user) => {
       res.send({ user })

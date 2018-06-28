@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 import ShoppingList from './ShoppingList';
 
 class UserShow extends Component {
@@ -40,11 +41,11 @@ class UserShow extends Component {
 
 
   render() {
-
+    const userId = this.state.users._id
     return (
       <div>
         <h1>{this.state.users.userName}'s Profile</h1>
-        <button>Edit Profile</button>
+        <Link to={`/users/${userId}/edit`}><button>Edit Profile</button></Link>
         <br />
         <img src={this.state.users.img} alt={this.state.users.userName} />
 
