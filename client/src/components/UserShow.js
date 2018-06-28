@@ -4,44 +4,56 @@ import ShoppingList from './ShoppingList';
 
 class UserShow extends Component {
     state = {
-        users: {},
-            shoppingList: []
+        users: [],
+        shoppingList: []
         
     }
 
-    showUser = () => {
+    componentDidMount() {
         const userId = this.props.match.params.id
         
         axios.get(`/api/users/${userId}`)
-            .then(res => {
+            .then((res) => {
                 console.log(res)
                 this.setState({
-                    users: res.data.users
+                    users: res.data.users,
+                    shoppingList: res.data.users.shoppingList
                 })
+            })
+            .catch((err) => {
+                console.error(err)
             })
     }
 
-    deleteUser = () => {
-        const userId = this.state.users._id
 
-        axios.delete(`/api/users/${userId}`)
-        .then(res => {
-            this.props.history.push('/')
-        })
-    }
+    // deleteUser = () => {
+    //     const userId = this.state.users._id
+
+    //     axios.delete(`/api/users/${userId}`)
+    //     .then(res => {
+    //         this.props.history.push('/users')
+    //     })
+    // }
 
 
-    componentDidMount() {
-        this.showUser()
-    }
+    
 
     render() {
-        const user = this.state.users
+       
         return (
             <div>
-               <h1>{user.userName}</h1>
-               <img src={user.img} alt={user.userName} />
-                <ShoppingList lists={user.shoppingList} />
+               <h1>{this.state.users.userName}</h1>
+               <img src={this.state.users.img} alt={this.state.users.userName} />
+
+                {this.state.shoppingList.map((list) => {
+                    return (
+                        <div key={list._id}>
+                            <p>{list.listName}</p>
+                            <p>{list.storeName}</p>
+                        </div>
+                    )
+                })}
+                <ShoppingList lists={this.state.users.shoppingList} />
             </div>
         );
     }

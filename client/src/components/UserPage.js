@@ -18,7 +18,7 @@ componentDidMount() {
         return (
             <div>
 
-                {this.state.users.map((user, index) => {
+                {this.state.users.map((user) => {
                     return (
                         <div key={user._id}>
                             <div>
