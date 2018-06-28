@@ -10,7 +10,7 @@ class UserShow extends Component {
     }
 
     componentDidMount() {
-        const userId = this.props.match.params.id
+        const userId = this.props.match.params.userId
         
         axios.get(`/api/users/${userId}`)
             .then((res) => {
@@ -26,14 +26,14 @@ class UserShow extends Component {
     }
 
 
-    // deleteUser = () => {
-    //     const userId = this.state.users._id
+    deleteUser = () => {
+        const userId = this.state.users._id
 
-    //     axios.delete(`/api/users/${userId}`)
-    //     .then(res => {
-    //         this.props.history.push('/users')
-    //     })
-    // }
+        axios.delete(`/api/users/${userId}`)
+        .then(res => {
+            this.props.history.push('/users')
+        })
+    }
 
 
     
@@ -53,6 +53,9 @@ class UserShow extends Component {
                         </div>
                     )
                 })}
+                <div>
+                    <button onClick={this.deleteUser}>Delete User</button>
+                </div>
                 <ShoppingList lists={this.state.users.shoppingList} />
             </div>
         );
