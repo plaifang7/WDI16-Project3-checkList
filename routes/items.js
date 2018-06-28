@@ -26,9 +26,13 @@ router.post('/', (req,res) => {
 })
 
 router.delete('/:id', (req,res) => {
-    ItemModel.findByIdAndRemove(req.params.id)
-    .then(() => {
-        res.send('Deleted the item')
+    UserModel.findById(req.params.userId)
+    .then((user) => {
+        user.shoppingList.id(req.params.listId).items.id(req.params.id).remove()
+        return user.save()
+    })
+    .then((savedItem) =>{
+        res.send({user: savedItem})
     })
 })
 

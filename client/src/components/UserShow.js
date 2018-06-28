@@ -20,6 +20,15 @@ class UserShow extends Component {
             })
     }
 
+    deleteUser = () => {
+        const userId = this.state.users._id
+
+        axios.delete(`/api/users/${userId}`)
+        .then(res => {
+            this.props.history.push('/')
+        })
+    }
+
 
     componentDidMount() {
         this.showUser()

@@ -25,6 +25,9 @@ componentDidMount() {
                                 <img  src={user.img} alt={user.userName} />
                             </div>
                             <Link  to={`/user/${user._id}`}>{user.userName}</Link>
+                            <div>
+                                
+                            </div>
                         </div>
                     )
                 })}
