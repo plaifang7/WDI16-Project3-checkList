@@ -22,10 +22,7 @@ class App extends Component {
   render() {
 
 
-    // const UserShowWrap = (props) => {
-    //   return (
-    //   <UserShow users={this.state.users} {...props} />
-    // )}
+  
 
     return (
       <Router>

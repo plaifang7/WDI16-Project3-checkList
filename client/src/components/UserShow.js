@@ -42,9 +42,11 @@ class UserShow extends Component {
        
         return (
             <div>
-               <h1>{this.state.users.userName}</h1>
+               <h1>{this.state.users.userName}'s Profile</h1>
+               <button>Edit Profile</button>
+               <br/>
                <img src={this.state.users.img} alt={this.state.users.userName} />
-
+                
                 {this.state.shoppingList.map((list) => {
                     return (
                         <div key={list._id}>
@@ -56,7 +58,6 @@ class UserShow extends Component {
                 <div>
                     <button onClick={this.deleteUser}>Delete User</button>
                 </div>
-                <ShoppingList lists={this.state.users.shoppingList} />
             </div>
         );
     }
