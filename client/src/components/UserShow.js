@@ -54,12 +54,16 @@ class UserShow extends Component {
             <div key={list._id}>
               <p>{list.listName}</p>
               <p>{list.storeName}</p>
+              <button></button>
             </div>
           )
         })}
         <div>
           <button onClick={this.deleteUser}>Delete User</button>
         </div>
+        <div>
+          <Link>+Add List</Link>
+          </div>
       </div>
     );
   }

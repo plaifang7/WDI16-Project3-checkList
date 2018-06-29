@@ -28,6 +28,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+        <div>
+          <h3>✓List</h3>
+          </div>
           <div>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
