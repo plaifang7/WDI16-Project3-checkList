@@ -8,6 +8,7 @@ import LoginPage from './components/LoginPage'
 import axios from 'axios'
 import UserShow from './components/UserShow';
 import EditUser from './components/EditUser';
+import NewList from './components/NewList';
 
 class App extends Component {
   state = {
@@ -46,7 +47,7 @@ class App extends Component {
             <Route exact path="/users/:userId/edit" component={EditUser} />`
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/about" component={About} />
-
+            <Route exact path="/users/:userId/list/new" component={NewList}/>
           </Switch>
         </div>
       </Router>
