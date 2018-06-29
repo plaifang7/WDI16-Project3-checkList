@@ -9,6 +9,7 @@ import axios from 'axios'
 import UserShow from './components/UserShow';
 import EditUser from './components/EditUser';
 import NewList from './components/NewList';
+import ShoppingList from './components/ShoppingList'
 
 class App extends Component {
   state = {
@@ -48,6 +49,7 @@ class App extends Component {
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/about" component={About} />
             <Route exact path="/users/:userId/list/new" component={NewList} />
+            <Route exact path="/users/:userId/list/:listId" component={ShoppingList} />
           </Switch>
         </div>
       </Router>

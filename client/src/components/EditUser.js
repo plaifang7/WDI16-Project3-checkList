@@ -30,6 +30,7 @@ handleSubmit = (event) => {
         return (
             <div>
               <h1>Edit Your Profile</h1>
+              <center>
                 <form onSubmit={this.handleSubmit}>
                 <input
                         placeholder="E-mail"
@@ -65,6 +66,7 @@ handleSubmit = (event) => {
                     <br/>
                     <button type="submit">Update User</button>
                 </form>
+                </center>
             </div>
         );
     }
