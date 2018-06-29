@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 class NewList extends Component {
   state = {
@@ -18,16 +19,16 @@ class NewList extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const userId = this.props.match.params.userId
-    axios.post(`/api/users/${userId}`)
-    .then(res => {
-      this.props.history.push(`/users/${res.data._id}`)
-    })
+    axios.post(`/api/users/${userId}/list/new`, this.state)
+      .then(res => {
+        this.props.history.push(`/users/${userId}`)
+      })
   }
 
   render() {
     return (
       <div>
-      <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <input
             placeholder="Store Name"
             type="text"
@@ -47,7 +48,7 @@ class NewList extends Component {
           <input
             placeholder="List Name"
             type="text"
-            name="email"
+            name="listName"
             value={this.state.listName}
             onChange={this.handleChange}
           />
