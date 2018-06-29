@@ -58,7 +58,7 @@ class UserShow extends Component {
         <br />
         <img src={this.state.users.img} alt={this.state.users.userName} />
         <div>
-          <Link to="/users/${userId}/list/new">+Add List</Link>
+          <Link to={`/users/${userId}/list/new`}>+Add List</Link>
         </div>
         {this.state.shoppingList.map((list) => {
           return (

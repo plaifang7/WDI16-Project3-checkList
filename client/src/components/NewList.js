@@ -6,13 +6,30 @@ class NewList extends Component {
     listDate: '',
     listName: ''
   }
-  
+
+  handleChange = (event) => {
+    const inputName = event.target.name
+    const userInput = event.target.value
+    this.setState({
+      [inputName]: userInput
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const userId = this.props.match.params.userId
+    axios.post(`/api/users/${userId}`)
+    .then(res => {
+      this.props.history.push(`/users/${res.data._id}`)
+    })
+  }
+
   render() {
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
           <input
-            placeholder="First Name"
+            placeholder="Store Name"
             type="text"
             name="storeName"
             value={this.state.storeName}
@@ -20,22 +37,22 @@ class NewList extends Component {
           />
           <br />
           <input
-            placeholder="Last Name"
-            type="text"
+            placeholder="Date"
+            type="date"
             name="listDate"
             value={this.state.listDate}
             onChange={this.handleChange}
           />
           <br />
           <input
-            placeholder="E-mail"
+            placeholder="List Name"
             type="text"
             name="email"
             value={this.state.listName}
             onChange={this.handleChange}
           />
           <br />
-          <button type="submit">Submit</button>
+          <button type="submit">Add List</button>
         </form>
       </div>
     );
