@@ -44,7 +44,10 @@ class ShoppingList extends Component {
 
     axios.delete(`/api/users/${userId}/list/${listId}/items/${itemId}`)
       .then(res => {
-        this.props.history.push(`/users/${userId}/list/${itemId}`)
+        this.setState({items: res.data})
+      })
+      .then(res => {
+        window.location.reload()
       })
 
   }
