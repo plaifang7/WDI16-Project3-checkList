@@ -24,9 +24,8 @@ class UserPage extends Component {
               <div>
                 <img src={user.img} alt={user.userName} />
               </div>
-              <Link to={`/users/${user._id}`}>{user.userName}</Link>
               <div>
-                <Link to={`/users/${user._id}`}><button>View Profile</button></Link>
+                <Link to={`/users/${user._id}`}><button>View {user.userName}'s' Profile</button></Link>
               </div>
             </div>
           )

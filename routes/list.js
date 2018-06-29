@@ -2,7 +2,7 @@ let express = require('express')
 let router = express.Router({ mergeParams: true })
 const { UserModel, ListModel } = require('../db/schema')
 
-// Get List Index Route
+// Show List 
 router.get('/:id', (req, res) => {
   UserModel.findById(req.params.userId)
     .then((user) => {
@@ -15,7 +15,7 @@ router.get('/:id', (req, res) => {
 })
 
 //Create New List
-router.post('/', (req, res) => {
+router.post('/new', (req, res) => {
   UserModel.findById(req.params.userId)
     .then((user) => {
       const newList = new ListModel(req.body)

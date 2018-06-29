@@ -28,16 +28,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <div>
-          <h3>✓List</h3>
+          <div>
+            <h3>✓List</h3>
+          </div>
+          <div>
+            <Link to="/login"><button>Log In</button></Link>
           </div>
           <div>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/users">Users</Link>
-          </div>
-          <div>
-            <Link to="/login"><button>Log In</button></Link>
           </div>
           <Switch>
             <Route exact path="/" component={HomePage} />
