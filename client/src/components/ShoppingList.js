@@ -15,9 +15,9 @@ class ShoppingList extends Component {
     axios.get(`/api/users/${userId}/list/${listId}`)
       .then(res => {
         this.setState({
-          shoppingList: res.data.lists
+          shoppingList: res.data.list
         })
-        console.log(res.data.users)
+        console.log(res.data)
       })
       .catch((err) => {
         console.error(err)
@@ -29,7 +29,7 @@ class ShoppingList extends Component {
     return (
       <div>
         hello
-        <h1>{this.state.shoppingList}</h1>
+        <h1>{this.state.shoppingList.listName}</h1>
       </div>
     );
   }

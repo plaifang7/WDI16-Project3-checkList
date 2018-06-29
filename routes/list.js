@@ -5,11 +5,11 @@ const { UserModel, ListModel } = require('../db/schema')
 // Show List 
 router.get('/:id', (req, res) => {
   UserModel.findById(req.params.userId)
-    .then((users) => {
-      const lists = users.shoppingList
+    .then((user) => {
+      const list = user.shoppingList.id(req.params.id)
       res.send({
-        lists,
-        users
+        list,
+        user
       })
     })
 })
