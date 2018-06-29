@@ -10,14 +10,14 @@ class ShoppingList extends Component {
   componentDidMount() {
     const userId = this.props.match.params.userId
     const listId = this.props.match.params.listId
+   
 
     axios.get(`/api/users/${userId}/list/${listId}`)
       .then(res => {
         this.setState({
-          shoppingList: res.data.users.shoppingList,
-          items: res.data.users.shoppingList.items
+          shoppingList: res.data.lists
         })
-        console.log(res.data.users.shoppingList)
+        console.log(res.data.users)
       })
       .catch((err) => {
         console.error(err)
@@ -29,7 +29,8 @@ class ShoppingList extends Component {
     return (
       <div>
         hello
-            </div>
+        <h1>{this.state.shoppingList}</h1>
+      </div>
     );
   }
 }
