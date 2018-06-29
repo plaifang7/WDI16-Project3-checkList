@@ -41,14 +41,8 @@ class UserShow extends Component {
     console.log(userId)
 
     axios.delete(`/api/users/${userId}/list/${listId}`)
-    .then(res => {
-      this.setState({
-        users: res.data.users,
-        shoppingList: res.data.shoppingList
-      })
-    })
       .then(res => {
-        this.props.history.push(`/users/${res.data._id}`)
+        window.location.reload()
       })
   }
 
@@ -56,7 +50,7 @@ class UserShow extends Component {
 
 
   render() {
-    const userId = this.state.users._id
+    const userId = this.state.users._id || ''
     return (
       <div>
         <h1>{this.state.users.userName}'s Profile</h1>
