@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import styled from 'styled-components'
+
+const ListWrap = styled.div`
+padding: 75px;
+  img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  `
+  const ItemWrap = styled.div`
+  border: 1px solid black;
+  `
 
 class ShoppingList extends Component {
+ 
   state = {
     shoppingList: {},
     items: [],
@@ -11,6 +25,8 @@ class ShoppingList extends Component {
 
 
   }
+
+  
 
   componentDidMount() {
     const userId = this.props.match.params.userId
@@ -78,21 +94,22 @@ class ShoppingList extends Component {
 
   render() {
     return (
-      <div>
-
+      <ListWrap>
+        <center>
         <h1>{this.state.shoppingList.listName}</h1>
+
         <div>
           <button onClick={this.deleteList}>Delete List</button>
         </div>
-
+        </center>
         {this.state.items.map((item) => {
           return (
-            <div key={item._id}>
+            <ItemWrap key={item._id}>
               <p>{item.itemName}</p>
               <img src={item.img} alt={item.itemName} />
               <button>✓</button>
               <button onClick={() => this.deleteItem(item._id)}>Delete Item</button>
-            </div>
+            </ItemWrap>
           )
         })}
         <div>
@@ -125,7 +142,7 @@ class ShoppingList extends Component {
             : null
           }
         </div>
-      </div>
+      </ListWrap>
     );
   }
 }
