@@ -4,7 +4,11 @@ import axios from 'axios'
 class ShoppingList extends Component {
   state = {
     shoppingList: {},
-    items: []
+    items: [],
+    newItem: true,
+    itemName: '',
+    img: '',
+
 
   }
 
@@ -25,6 +29,11 @@ class ShoppingList extends Component {
       .catch((err) => {
         console.error(err)
       })
+  }
+
+  toggleNewItem = () => {
+    const newShopItem = !this.state.newItem
+    this.setState({ newItem: newShopItem })
   }
 
   deleteList = (listId) => {
@@ -48,25 +57,59 @@ class ShoppingList extends Component {
 
   }
 
+  handleChange = (event) => {
+    
+  }
+
 
   render() {
     return (
       <div>
-        
+
         <h1>{this.state.shoppingList.listName}</h1>
         <div>
           <button onClick={this.deleteList}>Delete List</button>
         </div>
-          {this.state.items.map((item) => {
-            return(
-              <div key={item._id}>
+
+        {this.state.items.map((item) => {
+          return (
+            <div key={item._id}>
               <p>{item.itemName}</p>
-              <img src={item.img} alt={item.itemName}/>
+              <img src={item.img} alt={item.itemName} />
               <button>✓</button>
               <button onClick={() => this.deleteItem(item._id)}>Delete Item</button>
-              </div>
-            )
-          })}
+            </div>
+          )
+        })}
+        <div>
+          <button onClick={this.toggleNewItem}>
+            {this.state.newItem ? "Hide" : "Add Item"}
+          </button>
+          {this.state.newItem ?
+            <div>
+              <h1>Add an Item</h1>
+              <form>
+                <input
+                  placeholder="Item Name"
+                  type="text"
+                  name="itemName"
+                  value={this.state.itemName}
+                  onChange={this.handleChange}
+                />
+                <br />
+                <input
+                  placeholder="Image URL"
+                  type="text"
+                  name="img"
+                  value={this.state.img}
+                  onChange={this.handleChange}
+                />
+                <br />
+              </form>
+            </div>
+            : null
+          }
+        </div>
       </div>
     );
   }
