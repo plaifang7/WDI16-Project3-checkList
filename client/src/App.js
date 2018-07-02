@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, MenuItem, NavItem, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import './App.css';
 import HomePage from './components/HomePage'
@@ -18,6 +18,10 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 7px 7vw;
+
+Link {
+  color: black;
+}
 
 `
 const AppWrap = styled.div`
@@ -51,7 +55,7 @@ class App extends Component {
               <div><Link to="/about">About</Link></div>
               <div><Link to="/users">Users</Link></div>
               <div>
-                <Link to="/login"><button>Log In</button></Link>
+                <Link to="/login"><Button>Log In</Button></Link>
               </div>
             </NavBar>
           </nav>

@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const AllUsers = styled.div`
+padding: 75px;
+img{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+`
+
 
 class UserPage extends Component {
   state = {
@@ -16,7 +27,8 @@ class UserPage extends Component {
   render() {
 
     return (
-      <div>
+      <center>
+      <AllUsers>
 
         {this.state.users.map((user) => {
           return (
@@ -30,7 +42,8 @@ class UserPage extends Component {
             </div>
           )
         })}
-      </div>
+      </AllUsers>
+      </center>
     )
   }
 }
