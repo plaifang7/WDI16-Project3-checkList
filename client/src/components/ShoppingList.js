@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
+import Button from 'react-bootstrap'
 
 const ListWrap = styled.div`
 padding: 75px;
@@ -103,7 +104,7 @@ class ShoppingList extends Component {
         <h1>{this.state.shoppingList.listName}</h1>
 
         <div>
-          <button onClick={this.deleteList}>Delete List</button>
+          <Button onClick={this.deleteList}>Delete List</Button>
         </div>
         </center>
         <center>
@@ -142,7 +143,7 @@ class ShoppingList extends Component {
                   onChange={this.handleChange}
                 />
                 <br />
-                <button type="submit">Create Item</button>
+                <Button type="submit">Create Item</Button>
               </form>
             </div>
             : null

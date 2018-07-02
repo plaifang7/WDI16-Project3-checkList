@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
+import Button from 'react-bootstrap'
 
 const AllUsers = styled.div`
 padding: 75px;
@@ -40,7 +41,7 @@ class UserPage extends Component {
                 <img src={user.img} alt={user.userName} />
               </div>
               <div>
-                <Link to={`/users/${user._id}`}><button>View {user.userName}'s' Profile</button></Link>
+                <Link to={`/users/${user._id}`}><Button>View {user.userName}'s' Profile</Button></Link>
               </div>
             </SingleUserWrap>
           )

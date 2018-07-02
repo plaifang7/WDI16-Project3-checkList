@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Button from 'react-bootstrap'
 
 class NewList extends Component {
   state = {
@@ -53,7 +54,7 @@ class NewList extends Component {
             onChange={this.handleChange}
           />
           <br />
-          <button type="submit">Add List</button>
+          <Button type="submit">Add List</Button>
         </form>
       </div>
     );

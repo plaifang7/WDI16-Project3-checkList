@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Button from 'react-bootstrap'
 
 class EditUser extends Component {
   state = {
@@ -64,7 +65,7 @@ handleSubmit = (event) => {
                         onChange={this.handleChange}
                     />
                     <br/>
-                    <button type="submit">Update User</button>
+                    <Button type="submit">Update User</Button>
                 </form>
                 </center>
             </div>

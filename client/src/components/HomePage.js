@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import styled from'styled-components'
+import Button from 'react-bootstrap'
 
 const HomeWrap = styled.div`
 margin: 0 auto;
@@ -16,7 +17,7 @@ class HomePage extends Component {
         <h1>Welcome to ✓List</h1>
         <p>never forget what you came to the store for again!</p>
 
-        <Link to="/users"><button>Enter</button></Link>
+        <Link to="/users"><Button>Enter</Button></Link>
 
       </HomeWrap>
       </center>
