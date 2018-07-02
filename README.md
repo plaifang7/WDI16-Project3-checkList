@@ -2,7 +2,7 @@
 This is my third project for General Assembly's Web Development Immersive Course. During this project we were able to use the MERN stack to create an application. This means that I used: MongoDB with Mongoose, Express, React and Node.js.
 
 ## App Link
-[Click Here](https://checklist-pal.herokuapp.com/) for a deployed version of my app.
+* [Click Here](https://checklist-pal.herokuapp.com/) for a deployed version of my app.
 
 * [Click Here](https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/projects/unit_03/README.md) for more information about this project.
 
@@ -13,6 +13,6 @@ This is my third project for General Assembly's Web Development Immersive Course
 
 
 
-## Trello 
+
 
 
