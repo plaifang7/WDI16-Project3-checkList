@@ -37,15 +37,11 @@ class ShoppingList extends Component {
       })
   }
 
-  deleteItem = (item) => {
+  deleteItem = (itemId) => {
     const userId = this.props.match.params.userId
-    const listId = this.props.match.params._id
-    const itemId = item._id
+    const listId = this.props.match.params.listId
 
     axios.delete(`/api/users/${userId}/list/${listId}/items/${itemId}`)
-      .then(res => {
-        this.setState({items: res.data})
-      })
       .then(res => {
         window.location.reload()
       })
