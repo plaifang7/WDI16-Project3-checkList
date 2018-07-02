@@ -12,6 +12,10 @@ padding: 75px;
   `
   const ItemWrap = styled.div`
   border: 1px solid black;
+  diplay: flex;
+  width: 250px;
+  flex-direction: column;
+  margin: 10px;
   `
 
 class ShoppingList extends Component {
@@ -102,6 +106,7 @@ class ShoppingList extends Component {
           <button onClick={this.deleteList}>Delete List</button>
         </div>
         </center>
+        <center>
         {this.state.items.map((item) => {
           return (
             <ItemWrap key={item._id}>
@@ -113,6 +118,7 @@ class ShoppingList extends Component {
           )
         })}
         <div>
+          <br/>
           <button onClick={this.toggleNewItem}>
             {this.state.newItem ? "Hide" : "Add Item"}
           </button>
@@ -142,6 +148,7 @@ class ShoppingList extends Component {
             : null
           }
         </div>
+        </center>
       </ListWrap>
     );
   }

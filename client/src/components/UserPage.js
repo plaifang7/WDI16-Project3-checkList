@@ -11,6 +11,9 @@ img{
   border-radius: 50%;
 }
 `
+const SingleUserWrap = styled.div`
+padding: 10px;
+`
 
 
 class UserPage extends Component {
@@ -32,14 +35,14 @@ class UserPage extends Component {
 
         {this.state.users.map((user) => {
           return (
-            <div key={user._id}>
+            <SingleUserWrap key={user._id}>
               <div>
                 <img src={user.img} alt={user.userName} />
               </div>
               <div>
                 <Link to={`/users/${user._id}`}><button>View {user.userName}'s' Profile</button></Link>
               </div>
-            </div>
+            </SingleUserWrap>
           )
         })}
       </AllUsers>
