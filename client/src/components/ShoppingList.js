@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
-import Button from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
 const ListWrap = styled.div`
 padding: 75px;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Button from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
 class EditUser extends Component {
   state = {

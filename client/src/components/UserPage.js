@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
-import Button from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
 const AllUsers = styled.div`
 padding: 75px;
