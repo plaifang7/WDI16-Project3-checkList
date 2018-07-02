@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import {Button} from 'react-bootstrap'
 
 
 class UserShow extends Component {
@@ -52,7 +53,9 @@ class UserShow extends Component {
   render() {
     const userId = this.state.users._id || ''
     return (
+      <center>
       <div>
+        
         <h1>{this.state.users.userName}'s Profile</h1>
         <Link to={`/users/${userId}/edit`}><button>Edit Profile</button></Link>
         <br />
@@ -66,17 +69,19 @@ class UserShow extends Component {
               <p>{list.listName}</p>
               <p>{list.storeName}</p>
               <Link to={`/users/${userId}/list/${list._id}`}><button>View List</button></Link>
-              <button onClick={() => this.deleteList(list._id)}>Delete List</button>
+              <Button onClick={() => this.deleteList(list._id)}>Delete List</Button>
             </div>
           )
         })}
         <div>
-          <button onClick={this.deleteUser}>Delete User</button>
+          <Button onClick={this.deleteUser}>Delete User</Button>
         </div>
         <div>
 
         </div>
+        
       </div>
+      </center>
     );
   }
 }
