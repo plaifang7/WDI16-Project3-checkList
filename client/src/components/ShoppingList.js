@@ -58,7 +58,21 @@ class ShoppingList extends Component {
   }
 
   handleChange = (event) => {
-    
+    const inputName = event.target.name
+    const userInput = event.target.value
+    this.setState({
+      [inputName]: userInput
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const userId = this.props.match.params.userId
+    const listId = this.props.match.params.listId
+    axios.post(`/api/users/${userId}/list/${listId}/items`, this.state)
+    .then(res => {
+      window.location.reload()
+    })
   }
 
 
@@ -88,7 +102,7 @@ class ShoppingList extends Component {
           {this.state.newItem ?
             <div>
               <h1>Add an Item</h1>
-              <form>
+              <form onSubmit={this.handleSubmit}>
                 <input
                   placeholder="Item Name"
                   type="text"
@@ -105,6 +119,7 @@ class ShoppingList extends Component {
                   onChange={this.handleChange}
                 />
                 <br />
+                <button type="submit">Create Item</button>
               </form>
             </div>
             : null
