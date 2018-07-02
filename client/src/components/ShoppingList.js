@@ -5,8 +5,8 @@ import styled from 'styled-components'
 const ListWrap = styled.div`
 padding: 75px;
   img{
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
   }
   `
