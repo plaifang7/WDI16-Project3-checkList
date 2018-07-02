@@ -2,9 +2,9 @@
 This is my third project for General Assembly's Web Development Immersive Course. During this project we were able to use the MERN stack to create an application. This means that I used: MongoDB with Mongoose, Express, React and Node.js.
 
 ## App Link
-https://checklist-pal.herokuapp.com/
+[Click Here](https://checklist-pal.herokuapp.com/) for a deployed version of my app.
 
-* [Click Here] (https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/projects/unit_03/README.md) for more information about this project.
+* [Click Here](https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/projects/unit_03/README.md) for more information about this project.
 
 ## About This Project
 * I developed an app that allows users to create grocery list for specific stores and reasons. This app gives the user to create, show, edit and update a user profile. It also gives the users the ability to create and delete both lists and the items they contain.
