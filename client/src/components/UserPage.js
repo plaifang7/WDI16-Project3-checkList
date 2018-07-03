@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
-import {Button} from 'react-bootstrap'
+
 
 const AllUsers = styled.div`
 padding: 75px;
@@ -32,21 +33,21 @@ class UserPage extends Component {
 
     return (
       <center>
-      <AllUsers>
+        <AllUsers>
 
-        {this.state.users.map((user) => {
-          return (
-            <SingleUserWrap key={user._id}>
-              <div>
-                <img src={user.img} alt={user.userName} />
-              </div>
-              <div>
-                <Link to={`/users/${user._id}`}><Button>View {user.userName}'s' Profile</Button></Link>
-              </div>
-            </SingleUserWrap>
-          )
-        })}
-      </AllUsers>
+          {this.state.users.map((user) => {
+            return (
+              <SingleUserWrap key={user._id}>
+                <div>
+                  <img src={user.img} alt={user.userName} />
+                </div>
+                <div>
+                  <Link to={`/users/${user._id}`}><Button>View {user.userName}'s' Profile</Button></Link>
+                </div>
+              </SingleUserWrap>
+            )
+          })}
+        </AllUsers>
       </center>
     )
   }

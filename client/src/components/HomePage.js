@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import {Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import styled from'styled-components'
-import {Button} from 'react-bootstrap'
+
 
 const HomeWrap = styled.div`
 margin: 0 auto;

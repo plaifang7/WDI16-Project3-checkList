@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap'
 import axios from 'axios'
 import styled from 'styled-components'
-import {Button} from 'react-bootstrap'
+
 
 const ListWrap = styled.div`
 padding: 75px;
@@ -11,7 +12,7 @@ padding: 75px;
     border-radius: 50%;
   }
   `
-  const ItemWrap = styled.div`
+const ItemWrap = styled.div`
   border: 1px solid black;
   diplay: flex;
   width: 250px;
@@ -20,7 +21,7 @@ padding: 75px;
   `
 
 class ShoppingList extends Component {
- 
+
   state = {
     shoppingList: {},
     items: [],
@@ -31,7 +32,7 @@ class ShoppingList extends Component {
 
   }
 
-  
+
 
   componentDidMount() {
     const userId = this.props.match.params.userId
@@ -91,9 +92,9 @@ class ShoppingList extends Component {
     const userId = this.props.match.params.userId
     const listId = this.props.match.params.listId
     axios.post(`/api/users/${userId}/list/${listId}/items`, this.state)
-    .then(res => {
-      window.location.reload()
-    })
+      .then(res => {
+        window.location.reload()
+      })
   }
 
 
@@ -101,54 +102,54 @@ class ShoppingList extends Component {
     return (
       <ListWrap>
         <center>
-        <h1>{this.state.shoppingList.listName}</h1>
+          <h1>{this.state.shoppingList.listName}</h1>
 
-        <div>
-          <Button onClick={this.deleteList}>Delete List</Button>
-        </div>
+          <div>
+            <Button onClick={this.deleteList}>Delete List</Button>
+          </div>
         </center>
         <center>
-        {this.state.items.map((item) => {
-          return (
-            <ItemWrap key={item._id}>
-              <p>{item.itemName}</p>
-              <img src={item.img} alt={item.itemName} />
-              <button>✓</button>
-              <button onClick={() => this.deleteItem(item._id)}>Delete Item</button>
-            </ItemWrap>
-          )
-        })}
-        <div>
-          <br/>
-          <button onClick={this.toggleNewItem}>
-            {this.state.newItem ? "Hide" : "Add Item"}
-          </button>
-          {this.state.newItem ?
-            <div>
-              <h1>Add an Item</h1>
-              <form onSubmit={this.handleSubmit}>
-                <input
-                  placeholder="Item Name"
-                  type="text"
-                  name="itemName"
-                  value={this.state.itemName}
-                  onChange={this.handleChange}
-                />
-                <br />
-                <input
-                  placeholder="Image URL"
-                  type="text"
-                  name="img"
-                  value={this.state.img}
-                  onChange={this.handleChange}
-                />
-                <br />
-                <Button type="submit">Create Item</Button>
-              </form>
-            </div>
-            : null
-          }
-        </div>
+          {this.state.items.map((item) => {
+            return (
+              <ItemWrap key={item._id}>
+                <p>{item.itemName}</p>
+                <img src={item.img} alt={item.itemName} />
+                <button>✓</button>
+                <button onClick={() => this.deleteItem(item._id)}>Delete Item</button>
+              </ItemWrap>
+            )
+          })}
+          <div>
+            <br />
+            <button onClick={this.toggleNewItem}>
+              {this.state.newItem ? "Hide" : "Add Item"}
+            </button>
+            {this.state.newItem ?
+              <div>
+                <h1>Add an Item</h1>
+                <form onSubmit={this.handleSubmit}>
+                  <input
+                    placeholder="Item Name"
+                    type="text"
+                    name="itemName"
+                    value={this.state.itemName}
+                    onChange={this.handleChange}
+                  />
+                  <br />
+                  <input
+                    placeholder="Image URL"
+                    type="text"
+                    name="img"
+                    value={this.state.img}
+                    onChange={this.handleChange}
+                  />
+                  <br />
+                  <Button type="submit">Create Item</Button>
+                </form>
+              </div>
+              : null
+            }
+          </div>
         </center>
       </ListWrap>
     );
