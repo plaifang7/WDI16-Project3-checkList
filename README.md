@@ -10,6 +10,8 @@ This is my third project for General Assembly's Web Development Immersive Course
 
 * [Click Here](https://trello.com/b/Z9WlRM0s/wdi16-project-3-checklist) to see my trello board for this project.
 
+* [Click Here](https://www.figma.com/file/BFduMhIIg3qHpdF0mOc5fTqc/checkList) to see my wireframe for this project.
+
 * In Version 2, I would like to:
 ..* Pull in a third-party API that has items with pictures and allows users to search for those items as opposed to typing them in.
 ..* Have aisle numbers displays so that the customer can navigate through the store with ease.
