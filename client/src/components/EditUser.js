@@ -3,7 +3,18 @@ import {Button} from 'react-bootstrap'
 import axios from 'axios'
 import styled from 'styled-components'
 
-
+const EditWrap = styled.div`
+padding-top: 200px;
+height 100vh;
+background-color: #1E90FF;
+`
+const EditForm = styled.div`
+border: 2px solid #1E90FF;
+border-radius: 5px;
+width: 33vw;
+padding: 10px;
+background-color: rgb(255, 208, 42);
+`
 class EditUser extends Component {
   state = {
     userName: '',
@@ -31,9 +42,12 @@ handleSubmit = (event) => {
 
     render() {
         return (
-            <div>
-              <h1>Edit Your Profile</h1>
+            <EditWrap>
               <center>
+              <h1>Edit Your Profile</h1>
+              </center>
+              <center>
+                <EditForm>
                 <form onSubmit={this.handleSubmit}>
                 <input
                         placeholder="E-mail"
@@ -69,8 +83,9 @@ handleSubmit = (event) => {
                     <br/>
                     <Button type="submit">Update User</Button>
                 </form>
+                </EditForm>
                 </center>
-            </div>
+            </EditWrap>
         );
     }
 }

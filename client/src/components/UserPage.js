@@ -17,14 +17,14 @@ img{
   height: 250px;
   border-radius: 50%;
 }
-
 height: 100vh;
-background-size: cover;
-background-image: url('https://idsb.tmgrup.com.tr/2015/12/15/HaberDetay/1450123753272.jpg')
 @media(max-width: 500px){
   flex-flow: column wrap;
   width: 100vw;
 }
+background-size: cover;
+background-image: url('https://idsb.tmgrup.com.tr/2015/12/15/HaberDetay/1450123753272.jpg')
+
 `
 
 const SingleUserWrap = styled.div`

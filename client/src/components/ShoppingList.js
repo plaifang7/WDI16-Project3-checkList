@@ -5,12 +5,24 @@ import styled from 'styled-components'
 
 
 const ListWrap = styled.div`
-padding: 75px;
+display: flex;
+align-content: center;
+flex-flow: row wrap;
+height: 200vh;
+padding: 65px;
   img{
     width: 90px;
     height: 90px;
     border-radius: 50%;
   }
+ background-color: #1E90FF
+ Button:hover{
+  background-color: rgb(255, 208, 42);
+  cursor: pointer;
+}
+Button:focus{
+  outline: none;
+}
   `
 const ItemWrap = styled.div`
   border: 1px solid black;
@@ -18,6 +30,14 @@ const ItemWrap = styled.div`
   width: 250px;
   flex-direction: column;
   margin: 10px;
+  background-color: rgb(255, 208, 42);
+  Button:hover{
+    background-color: #1E90FF;
+    cursor: pointer;
+  }
+  Button:focus{
+    outline: none;
+  }
   `
 
 class ShoppingList extends Component {
@@ -112,7 +132,7 @@ class ShoppingList extends Component {
           {this.state.items.map((item) => {
             return (
               <ItemWrap key={item._id}>
-                <p>{item.itemName}</p>
+                <h4>{item.itemName}</h4>
                 <img src={item.img} alt={item.itemName} />
                 <button>✓</button>
                 <button onClick={() => this.deleteItem(item._id)}>Delete Item</button>
