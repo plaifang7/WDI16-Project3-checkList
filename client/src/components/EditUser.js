@@ -14,6 +14,9 @@ border-radius: 5px;
 width: 33vw;
 padding: 10px;
 background-color: rgb(255, 208, 42);
+@media(max-width: 500px){
+  width: 50vw;
+}
 `
 class EditUser extends Component {
   state = {

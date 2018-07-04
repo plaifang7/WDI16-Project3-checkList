@@ -13,6 +13,9 @@ width: 33vw;
 border-radius: 10px;
 border: 1px solid black
 background-color: rgb(255, 208, 42);
+@media(max-width: 500px){
+  width: 50vw;
+}
 `
 
 class NewList extends Component {
