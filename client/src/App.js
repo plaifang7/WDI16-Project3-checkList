@@ -18,7 +18,19 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 7px 7vw;
-
+div{
+  h3{
+    color: #1E90FF
+  }
+  
+}
+Button{
+  color: #1E90FF
+}
+Button:hover{
+  background-color: #1E90FF
+  cursor: pointer;
+}
 
 Link {
   color: black;

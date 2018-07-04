@@ -6,15 +6,31 @@ import styled from 'styled-components'
 
 
 const AllUsers = styled.div`
+display: flex;
+align-content: center;
+justify-content: space-around;
+flex-flow: row wrap;
 padding: 75px;
+margin: auto;
 img{
   width: 250px;
   height: 250px;
   border-radius: 50%;
 }
+
+
+
+
 `
 const SingleUserWrap = styled.div`
 padding: 10px;
+border: 1px solid black;
+width: 22vw;
+
+Button:hover{
+  background-color: #1E90FF
+  cursor: pointer;
+}
 `
 
 
