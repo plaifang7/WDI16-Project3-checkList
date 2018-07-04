@@ -19,6 +19,7 @@ justify-content: space-between;
 align-items: center;
 padding: 7px 7vw;
 
+
 Link {
   color: black;
 }
@@ -26,6 +27,7 @@ Link {
 `
 const AppWrap = styled.div`
 font-family: 'Montserrat', sans-serif;
+
 `
 
 class App extends Component {
