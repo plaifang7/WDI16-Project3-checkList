@@ -13,11 +13,11 @@ This is my third project for General Assembly's Web Development Immersive Course
 * [Click Here](https://www.figma.com/file/BFduMhIIg3qHpdF0mOc5fTqc/checkList) to see my wireframe for this project.
 
 * In Version 2, I would like to:
-..* Pull in a third-party API that has items with pictures and allows users to search for those items as opposed to typing them in.
-..* Have aisle numbers displays so that the customer can navigate through the store with ease.
-..* Toggle a create user button onClick for the Login Button.
-..* Pull in a third-party API for information for each specific store.
-..* Make the app mobile first.
+    * Pull in a third-party API that has items with pictures and allows users to search for those items as opposed to typing them in.
+    * Have aisle numbers displays so that the customer can navigate through the store with ease.
+    * Toggle a create user button onClick for the Login Button.
+    * Pull in a third-party API for information for each specific store.
+    * Make the app mobile first.
 
 ## Technologies Used
 ### Front-End
