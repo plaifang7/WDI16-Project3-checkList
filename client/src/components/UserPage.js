@@ -17,19 +17,28 @@ img{
   height: 250px;
   border-radius: 50%;
 }
-
+height: 100vh;
+background-size: cover;
+background-image: url('https://idsb.tmgrup.com.tr/2015/12/15/HaberDetay/1450123753272.jpg')
 
 
 
 `
 const SingleUserWrap = styled.div`
 padding: 10px;
-border: 1px solid black;
+border: 2px solid #1E90FF;
 width: 22vw;
-
+height: 50vh;
+background-color: white;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+border-radius: 5px;
 Button:hover{
   background-color: #1E90FF
   cursor: pointer;
+}
+Button:focus{
+  outline: none;
 }
 `
 

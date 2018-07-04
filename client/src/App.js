@@ -21,6 +21,7 @@ padding: 7px 7vw;
 div{
   h3{
     color: #1E90FF
+    text-shadow: 1px 1px black;
   }
   
 }
@@ -31,7 +32,9 @@ Button:hover{
   background-color: #1E90FF
   cursor: pointer;
 }
-
+Button:focus{
+  outline: none;
+}
 Link {
   color: black;
 }

@@ -9,7 +9,7 @@ margin: auto;
 padding: 77px;
 background-image: url('https://media.istockphoto.com/photos/supermarket-interior-with-shopping-cart-picture-id505068034?k=6&m=505068034&s=612x612&w=0&h=0sUqDnKdRjZZtvHZeLCIu6HIL37MU3ICydXDEiz7Kno=');
 background-size: cover;
-background-repeat: no repeat;
+background-repeat: no-repeat;
 height 100vh;
 background-position: center;
 
@@ -24,10 +24,14 @@ div{
   pading: 25px;
   span{
     color: #1E90FF
+    text-shadow: 2px 2px black;
   }
   Button:hover{
     background-color: #1E90FF
     cursor: pointer;
+  }
+  Button:focus{
+    outline: none;
   }
 }
 
