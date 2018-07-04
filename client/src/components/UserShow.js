@@ -6,11 +6,37 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const UserProf = styled.div`
+Button{
+  margin: 10px;
+}
+Button:hover{
+  background-color: #1E90FF
+  cursor: pointer;
+}
+Button:focus{
+  outline: none;
+}
 img{
   width: 250px;
   height: 250px;
   border-radius: 50%;
 }
+background-position: center;
+height: 100vh;
+background-size: cover;
+background-image: url('https://www.dailydot.com/wp-content/uploads/2d8/f6/7a1eebe44b53aef6c7f7d2dbb4d35686.jpg')
+`
+const ShopListWrap = styled.div`
+border: 1px solid black;
+width: 40vw
+margin: 10px auto;
+background-color: white;
+
+`
+const AddList = styled.div`
+border: 1px solid black;
+background-color: white;
+width: 20vw
 `
 
 
@@ -69,22 +95,20 @@ class UserShow extends Component {
 
           <h1>{this.state.users.userName}'s Profile</h1>
           <Link to={`/users/${userId}/edit`}><Button>Edit Profile</Button></Link>
-          <div>
             <Button onClick={this.deleteUser}>Delete User</Button>
-          </div>
           <br />
           <img src={this.state.users.img} alt={this.state.users.userName} />
-          <div>
+          <AddList>
             <Link to={`/users/${userId}/list/new`}>+Add List</Link>
-          </div>
+          </AddList>
           {this.state.shoppingList.map((list) => {
             return (
-              <div key={list._id}>
-                <p>{list.listName}</p>
-                <p>{list.storeName}</p>
-                <Link to={`/users/${userId}/list/${list._id}`}><button>View List</button></Link>
+              <ShopListWrap key={list._id}>
+                <p>List Name: {list.listName}</p>
+                <p>Store Name: {list.storeName}</p>
+                <Link to={`/users/${userId}/list/${list._id}`}><Button>View List</Button></Link>
                 <Button onClick={() => this.deleteList(list._id)}>Delete List</Button>
-              </div>
+              </ShopListWrap>
             )
           })}
 

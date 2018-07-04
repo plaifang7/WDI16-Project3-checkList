@@ -17,28 +17,40 @@ img{
   height: 250px;
   border-radius: 50%;
 }
+
 height: 100vh;
 background-size: cover;
 background-image: url('https://idsb.tmgrup.com.tr/2015/12/15/HaberDetay/1450123753272.jpg')
-
-
-
+@media(max-width: 500px){
+  flex-flow: column wrap;
+  width: 100vw;
+}
 `
+
 const SingleUserWrap = styled.div`
-padding: 10px;
-border: 2px solid #1E90FF;
+padding: 2px 10px;
+border: 4px solid #1E90FF;
 width: 22vw;
 height: 50vh;
-background-color: white;
+background-color: rgb(255, 208, 42);
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 transition: 0.3s;
 border-radius: 5px;
+Button{
+  margin: 10px;
+}
 Button:hover{
   background-color: #1E90FF
   cursor: pointer;
 }
 Button:focus{
   outline: none;
+}
+@media(max-width: 500px){
+  width: 70vw;
+  height: 44vh;
+  margin: 25px;
+  padding: 10px;
 }
 `
 

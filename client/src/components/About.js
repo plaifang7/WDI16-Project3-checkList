@@ -24,9 +24,9 @@ class About extends Component {
         <p>checkList is an app that allows it's users to create custom shopping list for their everyday use. This app allows you, the user to create, delete and edit your custom shopping list. This app is made specifically for people who like to get in and out of the store fast and effectively when gone shopping. In the near future we would like to incorporate an API that provides the user with aisle numbers for specific items and specific stores to help the user navigate with ease.</p>
         <h3>Click the icons below to see more from our developer:</h3>
         <div>
-          <a href="https://twitter.com/PLFtheWD7"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ11DW9srBbAzUbRu_ELaOJnxWaReXUtZ0EOVJdV58qwrST4zF"/> </a>
-          <a href="https://github.com/plaifang7"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"/></a>
-          <a href="https://www.linkedin.com/in/patrick-lai-fang7/"><img src="http://nashvillerocks.com/wp-content/uploads/2015/08/linkedin-cracked.png"/></a>
+          <a href="https://twitter.com/PLFtheWD7"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ11DW9srBbAzUbRu_ELaOJnxWaReXUtZ0EOVJdV58qwrST4zF" alt="Twitter"/> </a>
+          <a href="https://github.com/plaifang7"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" alt="Github"/></a>
+          <a href="https://www.linkedin.com/in/patrick-lai-fang7/"><img src="http://nashvillerocks.com/wp-content/uploads/2015/08/linkedin-cracked.png" alt="Linkedin"/></a>
         </div>
         
         </center>

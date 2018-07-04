@@ -18,6 +18,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 7px 7vw;
+background-color: rgb(255, 208, 42);
 div{
   h3{
     color: #1E90FF
@@ -38,11 +39,16 @@ Button:focus{
 Link {
   color: black;
 }
+@media(max-width: 500px){
+  width: 100vw;
+}
 
 `
 const AppWrap = styled.div`
 font-family: 'Montserrat', sans-serif;
-
+@media(max-width: 500px){
+  width: 100vw;
+}
 `
 
 class App extends Component {
