@@ -40,7 +40,7 @@ Button{
   margin: 10px;
 }
 Button:hover{
-  background-color: #1E90FF
+  background-color: #1E90FF;
   cursor: pointer;
 }
 Button:focus{

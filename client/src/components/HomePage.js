@@ -27,7 +27,7 @@ div{
     text-shadow: 2px 2px black;
   }
   Button:hover{
-    background-color: #1E90FF
+    background-color: rgb(255, 208, 42);
     cursor: pointer;
   }
   Button:focus{

@@ -10,7 +10,7 @@ Button{
   margin: 10px;
 }
 Button:hover{
-  background-color: #1E90FF
+  background-color: rgb(255, 208, 42);
   cursor: pointer;
 }
 Button:focus{
@@ -30,7 +30,14 @@ const ShopListWrap = styled.div`
 border: 1px solid black;
 width: 40vw
 margin: 10px auto;
-background-color: white;
+background-color: #1E90FF;
+Button:hover{
+  background-color: rgb(255, 208, 42);
+  cursor: pointer;
+}
+Button:focus{
+  outline: none;
+}
 
 `
 const AddList = styled.div`
